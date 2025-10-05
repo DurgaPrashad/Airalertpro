@@ -76,17 +76,45 @@ _"Empowering communities with NASA-grade air quality intelligence to make inform
 
 ### 🌐 **Production URLs**
 
-- **Frontend**: [https://airalert-pro.vercel.app](https://airalert-pro.vercel.app)
-- **Backend API**: [https://airalert-backend.railway.app](https://airalert-backend.railway.app)
-- **API Documentation**: [https://airalert-backend.railway.app/api/docs](https://airalert-backend.railway.app/api/docs)
+- **Frontend**: [https://airalertpro.vercel.app](https://airalertpro.vercel.app)
+- **Backend API**: [https://progalix.earth](https://progalix.earth)
+- **API Documentation**: [https://progalix.earth/api/docs](https://progalix.earth/api/docs)
 
 ### 🧪 **Quick Test**
 
-1. Visit the live demo
+1. Visit the live demo at [https://airalertpro.vercel.app](https://airalertpro.vercel.app)
 2. Click the **chat icon** (💬) in the bottom-right corner
 3. Select **Panaji** or any Goa city
 4. Ask: _"Is it safe to exercise outside today?"_
 5. Experience AI-powered air quality intelligence!
+
+---
+
+## 📦 **Repository Structure**
+
+This repository contains the complete AirAlert Pro project:
+
+```
+.
+├── backend/              # Flask backend API
+│   ├── api/              # API modules (NASA, OpenAQ, Weather, Meteomatics)
+│   ├── models/           # Data processing and ML models
+│   ├── utils/            # Utility functions
+│   ├── app.py            # Main Flask application
+│   ├── config.py         # Configuration management
+│   ├── requirements.txt  # Python dependencies
+│   └── README.md         # Backend documentation
+│
+├── frontend/             # React frontend application
+│   ├── src/              # Source code
+│   ├── public/           # Static assets
+│   ├── package.json      # Node.js dependencies
+│   └── README.md         # Frontend documentation
+│
+├── README.md             # Main project documentation
+├── LICENSE               # MIT License
+└── ...                   # Additional documentation files
+```
 
 ---
 
@@ -139,8 +167,8 @@ _"Empowering communities with NASA-grade air quality intelligence to make inform
 ### **1. Clone Repository**
 
 ```bash
-git clone https://github.com/Devnaam/airalert-2025.git
-cd airalert-2025
+git clone https://github.com/DurgaPrashad/Airalertpro.git
+cd Airalertpro
 ```
 
 ### **2. Backend Setup**
@@ -352,23 +380,15 @@ vercel env add VITE_API_URL production
 vercel env add VITE_GEMINI_API_KEY production
 ```
 
-### **Backend Deployment (Railway)**
+### **Backend Deployment**
 
-```bash
-# Connect to Railway
-cd backend
-railway login
-railway link
-
-# Deploy
-railway up
-```
+The backend is deployed at [https://progalix.earth](https://progalix.earth) and serves as the API for the frontend.
 
 ### **Production URLs**
 
-- **Frontend**: Auto-generated Vercel domain
-- **Backend**: Auto-generated Railway domain
-- **Custom Domain**: Configure in platform settings
+- **Frontend**: [https://airalertpro.vercel.app](https://airalertpro.vercel.app)
+- **Backend API**: [https://progalix.earth](https://progalix.earth)
+- **API Documentation**: [https://progalix.earth/api/docs](https://progalix.earth/api/docs)
 
 ---
 
@@ -388,10 +408,10 @@ railway up
 
 ```bash
 # Test API health
-curl https://your-backend-url.railway.app/
+curl https://progalix.earth/
 
 # Test current data
-curl https://your-backend-url.railway.app/api/current
+curl https://progalix.earth/api/current
 
 # Test Gemini integration
 # Use chat widget in application
@@ -423,7 +443,7 @@ curl https://your-backend-url.railway.app/api/current
 
 ### **Development Workflow**
 
-1. **Fork** the repository
+1. **Fork** the repository: [https://github.com/DurgaPrashad/Airalertpro](https://github.com/DurgaPrashad/Airalertpro)
 2. **Create** feature branch (`git checkout -b feature/amazing-feature`)
 3. **Commit** changes (`git commit -m 'Add amazing feature'`)
 4. **Push** to branch (`git push origin feature/amazing-feature`)
@@ -466,7 +486,7 @@ curl https://your-backend-url.railway.app/api/current
 - **Team Name**: AirAlert Pro Development Team
 - **Location**: Goa, India
 - **Challenge Date**: October 4-5, 2025
-- **Submission**: [GitHub Repository](https://github.com/Devnaam/airalert-2025)
+- **Submission**: [GitHub Repository](https://github.com/DurgaPrashad/Airalertpro)
 
 ### **Project Impact**
 
@@ -507,14 +527,14 @@ curl https://your-backend-url.railway.app/api/current
 
 ### **Project Links**
 
-- **🌐 Live Demo**: [https://airalert-pro.vercel.app](https://airalert-pro.vercel.app)
-- **📱 GitHub**: [https://github.com/Devnaam/airalert-2025](https://github.com/Devnaam/airalert-2025)
-- **📋 API Docs**: [https://airalert-backend.railway.app/api/docs](https://airalert-backend.railway.app/api/docs)
+- **🌐 Live Demo**: [https://airalertpro.vercel.app](https://airalertpro.vercel.app)
+- **📱 GitHub**: [https://github.com/DurgaPrashad/Airalertpro](https://github.com/DurgaPrashad/Airalertpro)
+- **📋 API Docs**: [https://progalix.earth/api/docs](https://progalix.earth/api/docs)
 
 ### **Get Help**
 
-- **🐛 Issues**: [GitHub Issues](https://github.com/Devnaam/airalert-2025/issues)
-- **💬 Discussions**: [GitHub Discussions](https://github.com/Devnaam/airalert-2025/discussions)
+- **🐛 Issues**: [GitHub Issues](https://github.com/DurgaPrashad/Airalertpro/issues)
+- **💬 Discussions**: [GitHub Discussions](https://github.com/DurgaPrashad/Airalertpro/discussions)
 - **📧 Contact**: Create an issue for support
 
 ---
@@ -548,9 +568,8 @@ _This project was inspired by the critical need for accessible air quality infor
 **Built with ❤️ for NASA Space Apps Challenge 2025**  
 **Making air quality data accessible to everyone in Goa, India**
 
-![Visitors](https://visitor-badge.glitch.me/badge?page_id=devnaam.airalert-2025)
-![GitHub stars](https://img.shields.io/github/stars/Devnaam/airalert-2025?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Devnaam/airalert-2025?style=social)
+![GitHub stars](https://img.shields.io/github/stars/DurgaPrashad/Airalertpro?style=social)
+![GitHub forks](https://img.shields.io/github/forks/DurgaPrashad/Airalertpro?style=social)
 
 </div>
 
