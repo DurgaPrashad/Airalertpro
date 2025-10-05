@@ -14,6 +14,10 @@ class Config:
     # Weather API (Open-Meteo is free)
     WEATHER_API_URL = 'https://api.open-meteo.com/v1/forecast'
     
+    # Meteomatics API credentials
+    METEOMATICS_USERNAME = os.getenv('METEOMATICS_USERNAME')
+    METEOMATICS_PASSWORD = os.getenv('METEOMATICS_PASSWORD')
+    
     # Goa coordinates for data fetching
     GOA_COORDINATES = {
         'latitude': 15.2993,

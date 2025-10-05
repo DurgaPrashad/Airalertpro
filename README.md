@@ -31,6 +31,13 @@ _"Empowering communities with NASA-grade air quality intelligence to make inform
 - **Hourly atmospheric monitoring** with 2.1 x 4.4 km resolution
 - **Advanced pollutant tracking** (NO₂, O₃, HCHO)
 
+### 🌦️ **Multi-Source Weather Data**
+
+- **Primary**: Open-Meteo free weather API
+- **Fallback**: Meteomatics premium weather API
+- **Historical + Real-time + Forecast** data access
+- **Enhanced air quality modeling** with meteorological features
+
 ### 🤖 **AI-Powered Assistant**
 
 - **Gemini 2.0 Flash AI** integration for intelligent responses
@@ -116,7 +123,8 @@ _"Empowering communities with NASA-grade air quality intelligence to make inform
 | **Gemini 2.0 Flash** | AI Assistant   | Real-time chat responses   |
 | **NASA TEMPO**       | Satellite data | Atmospheric monitoring     |
 | **OpenAQ Network**   | Ground sensors | Surface-level measurements |
-| **Open-Meteo**       | Weather data   | Meteorological conditions  |
+| **Open-Meteo**       | Weather data   | Primary meteorological     |
+| **Meteomatics**      | Weather data   | Fallback meteorological    |
 
 ---
 
@@ -167,6 +175,7 @@ Application runs on: `http://localhost:5173`
 - **Gemini API**: [Google AI Studio](https://aistudio.google.com/app/apikey)
 - **NASA APIs**: Available through public endpoints
 - **OpenAQ**: Open data, no key required
+- **Meteomatics** (Optional): [Meteomatics Registration](https://www.meteomatics.com/en/weather-api/)
 
 ---
 
@@ -181,11 +190,15 @@ VITE_API_URL=http://localhost:5000
 VITE_GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-#### Backend (environment/deployment)
+#### Backend (`.env`)
 
 ```env
-FLASK_ENV=production
+FLASK_ENV=development
 PORT=5000
+NASA_TOKEN=your_nasa_token_here
+OPENAQ_API_KEY=your_openaq_key_here
+METEOMATICS_USERNAME=your_meteomatics_username
+METEOMATICS_PASSWORD=your_meteomatics_password
 GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
@@ -278,8 +291,9 @@ The AI assistant can intelligently respond to:
 
 ### **Weather Data**
 
-- **Open-Meteo**: [https://open-meteo.com/](https://open-meteo.com/)
-- **Spatial Resolution**: 11 km
+- **Open-Meteo**: [https://open-meteo.com/](https://open-meteo.com/) (Primary)
+- **Meteomatics**: [https://www.meteomatics.com/](https://www.meteomatics.com/) (Fallback)
+- **Spatial Resolution**: 11 km (Open-Meteo), variable (Meteomatics)
 - **Forecast Horizon**: 7 days
 - **Parameters**: Temperature, humidity, wind speed, conditions
 
@@ -479,6 +493,14 @@ curl https://your-backend-url.railway.app/api/current
 - [ ] **Research Platform**: Academic collaboration features
 - [ ] **Global Expansion**: International market entry
 
+### **Enhanced Data Integration**
+
+- [ ] **Microsoft Planetary Computer**: Environmental and Earth observation datasets (NDVI, NO₂, ozone, etc.)
+- [ ] **Meteomatics Weather API**: Real-time and forecast weather data enhancement
+- [ ] **OpenAQ & Pandora**: Ground truth validation of TEMPO data
+- [ ] **Cloud Infrastructure**: Microsoft Azure and Google Cloud for scalable processing
+- [ ] **AI Development**: GitHub Copilot for accelerated development
+
 ---
 
 ## 📞 **Support & Contact**
@@ -510,6 +532,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - **NASA TEMPO Team**: For providing exceptional satellite data
 - **OpenAQ Community**: For open air quality data
 - **Google AI**: For Gemini 2.0 Flash API access
+- **Meteomatics**: For premium weather data API
 - **Open Source Community**: For amazing tools and libraries
 
 ### **Inspiration**
@@ -534,5 +557,3 @@ _This project was inspired by the critical need for accessible air quality infor
 ---
 
 _Last Updated: October 5, 2025 | Version: 1.0.0 | NASA Space Apps Challenge 2025_
-#   A i r a l e r t p r o  
- 

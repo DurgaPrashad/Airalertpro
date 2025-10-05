@@ -35,10 +35,14 @@ try:
     from models.data_processor import DataProcessor
     from models.forecast import AirQualityForecaster
     from utils.aqi_calculator import AQICalculator
+    from api.meteomatics import MeteomaticsAPI
+    from api.weather import WeatherAPI
     
     data_processor = DataProcessor()
     forecaster = AirQualityForecaster()
     aqi_calculator = AQICalculator()
+    meteomatics_api = MeteomaticsAPI()
+    weather_api = WeatherAPI()
     COMPONENTS_LOADED = True
 except ImportError as e:
     print(f"⚠️  Warning: Could not import components: {e}")
@@ -120,6 +124,8 @@ except ImportError as e:
     data_processor = MockDataProcessor()
     forecaster = MockForecaster()
     aqi_calculator = MockAQICalculator()
+    meteomatics_api = MeteomaticsAPI()
+    weather_api = WeatherAPI()
 
 @app.route('/')
 def home():
@@ -520,12 +526,20 @@ def get_api_documentation():
                 'coverage': '100+ countries, 12,000+ monitoring stations'
             },
             'weather': {
-                'name': 'Open-Meteo Weather API',
+                'name': 'Open-Meteo Weather API (Primary)',
                 'description': 'High-resolution weather forecasting',
                 'parameters': ['Temperature', 'Humidity', 'Wind Speed', 'Wind Direction'],
                 'citation': 'Open-Meteo, https://open-meteo.com/',
                 'spatial_resolution': '11 km',
                 'forecast_horizon': '7 days'
+            },
+            'weather_fallback': {
+                'name': 'Meteomatics Weather API (Fallback)',
+                'description': 'Premium weather API with global coverage',
+                'parameters': ['Temperature', 'Humidity', 'Wind Speed', 'Wind Direction'],
+                'citation': 'Meteomatics, https://www.meteomatics.com/',
+                'spatial_resolution': 'Variable (up to 100m)',
+                'forecast_horizon': '14 days'
             }
         },
         'machine_learning': {
@@ -543,6 +557,15 @@ def get_api_documentation():
     }
     
     return jsonify(docs)
+
+@app.route('/api/test-meteomatics', methods=['GET'])
+def test_meteomatics():
+    """Test endpoint for Meteomatics API integration"""
+    try:
+        result = meteomatics_api.get_current_weather()
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
 
 # Health check endpoint for deployment platforms
 @app.route('/health')
